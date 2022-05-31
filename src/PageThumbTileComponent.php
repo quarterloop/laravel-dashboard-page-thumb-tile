@@ -18,11 +18,13 @@ class PageThumbTileComponent extends Component
     public function render()
     {
 
+      $pageThumbStore = PageThumbStore::make();
+
         return view('dashboard-page-thumb-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
-
-            'lastUpdateTime'  => date('H:i:s', strtotime($w3cValidatorStore->getLastUpdateTime())),
-            'lastUpdateDate'  => date('d.m.Y', strtotime($w3cValidatorStore->getLastUpdateDate())),
+            'screenshot'      => $pageThumbStore->getData()['screenshot'],
+            'lastUpdateTime'  => date('H:i:s', strtotime($pageThumbStore->getLastUpdateTime())),
+            'lastUpdateDate'  => date('d.m.Y', strtotime($pageThumbStore->getLastUpdateDate())),
         ]);
     }
 }
