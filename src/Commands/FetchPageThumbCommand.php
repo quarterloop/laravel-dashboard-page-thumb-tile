@@ -19,6 +19,7 @@ class FetchPageThumbCommand extends Command
 
         $pageThumbnail = $page_thumb_api::getThumbnail(
             config('dashboard.tiles.hosting.url'),
+            config('dashboard.tiles.screenshotapi.key'),
         );
 
         PageThumbStore::make()->setData($pageThumbnail);
