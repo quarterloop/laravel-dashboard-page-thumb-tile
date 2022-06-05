@@ -7,18 +7,10 @@
           </svg>
         </a>
 
-        <div class="font-medium text-dimmed text-xs text-center">{{ $website }}</div>
-        <p class="text-dimmed lowercase tracking-wide tabular-nums text-center mr-auto ml-auto mb-3 w-full"
-           style="font-size: 12px;">
-           {{ $lastUpdateDate }} - {{ $lastUpdateTime }}
-        </p>
-
-
-          <ul class="mt-auto border-t border-l border-r border-white">
-              <div class="border-b border-white">
-                <img src="{{ $screenshot }}" alt="Screenshot {{ $website }}" width="100%" height="auto">
-              </div>
-          </ul>
+        <div class="h-full flex flex-col">
+          <img src="{{ $screenshot }}" alt="Screenshot {{ $website }}" width="100%" height="auto" class="rounded my-auto">
+          <div class="mx-auto">{{ $website }}</div>
+        </div>
 
     </div>
 </x-dashboard-tile>
