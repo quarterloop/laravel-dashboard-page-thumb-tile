@@ -5,6 +5,7 @@ namespace Quarterloop\PageThumbTile\Commands;
 use Illuminate\Console\Command;
 use Quarterloop\PageThumbTile\Services\PageThumbAPI;
 use Quarterloop\PageThumbTile\PageThumbStore;
+use Session;
 
 class FetchPageThumbCommand extends Command
 {
@@ -18,7 +19,7 @@ class FetchPageThumbCommand extends Command
         $this->info('Fetching page thumbnail ...');
 
         $pageThumbnail = $page_thumb_api::getThumbnail(
-            config('dashboard.tiles.hosting.url'),
+            Session::get('website'),
             config('dashboard.tiles.screenshotapi.key'),
         );
 
