@@ -22,7 +22,7 @@ class PageThumbTileComponent extends Component
 
         return view('dashboard-page-thumb-tile::tile', [
             'website'         => config('dashboard.tiles.hosting.url'),
-            'screenshot'      => $pageThumbStore->getData()['screenshot'],
+            'screenshot'      => $pageThumbStore->getData(),
             'lastUpdateTime'  => date('H:i:s', strtotime($pageThumbStore->getLastUpdateTime())),
             'lastUpdateDate'  => date('d.m.Y', strtotime($pageThumbStore->getLastUpdateDate())),
         ]);
