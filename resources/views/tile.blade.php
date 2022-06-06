@@ -8,8 +8,8 @@
         </a>
 
         <div class="h-full flex flex-col">
-          <img src="{{ $screenshot }}" alt="Screenshot {{ $website }}" width="100%" height="auto" class="rounded my-auto">
-          <div class="mx-auto">{{ $website }}</div>
+          <img src="{{ $screenshot['screenshot'] }}" alt="Screenshot {{ $website }}" width="100%" height="auto" class="rounded my-auto">
+          <div class="mx-auto">{{ Session::get('website') }}</div>
         </div>
 
     </div>
